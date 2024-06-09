@@ -1,8 +1,11 @@
-import Header from '../../components/Header/index.jsx';
+import Search from '../../components/Search/index.jsx';
+import OptionsFilter from '../../components/OptionsFilter/index.jsx';
+import styles from './styles.module.css';
 
 const HomePage = () => (
     <>
-
+        <Search />
+        <OptionsFilter />
     </>
 );
 

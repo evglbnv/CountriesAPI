@@ -7,9 +7,14 @@ import './index.css';
 
 import App from './App.jsx';
 
-const root = createRoot(App);
+const container = document.getElementById('root');
+const root = createRoot(container);
 
 root.render(
-    <App />,
-    document.getElementById('root'),
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+  ,
 );

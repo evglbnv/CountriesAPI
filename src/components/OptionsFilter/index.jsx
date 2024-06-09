@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import styles from './styles.module.css';
 
 function OptionsFilter() {

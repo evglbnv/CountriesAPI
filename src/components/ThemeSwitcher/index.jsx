@@ -1,10 +1,11 @@
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
+import styles from './styles.module.css';
 
 function ThemeSwitcher() {
   return (
-    <div>
+    <div className={styles.ThemeSwitcher}>
       <IoMoonOutline></IoMoonOutline>
-      <p>Dark Mode</p>
+      <p className={styles.ThemeSwitcher__text}>Dark Mode</p>
     </div>
   );
 }

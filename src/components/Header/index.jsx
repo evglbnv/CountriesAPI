@@ -13,8 +13,8 @@ function Header() {
         >
           Where in the world?
         </Link>
-        <ThemeSwitcher />
       </div>
+      <ThemeSwitcher />
     </header>
   );
 }

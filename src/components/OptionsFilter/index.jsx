@@ -1,26 +1,28 @@
 /* eslint-disable indent */
+import React, { useState } from 'react';
+import Select from 'react-select';
 import styles from './styles.module.css';
 
+const options = [{ value: 'Africa', label: 'Africa' },
+{ value: 'America', label: 'America' },
+{ value: 'Asia', label: 'Asia' },
+{ value: 'Europe', label: 'Europe' },
+{ value: 'Oceania', label: 'Oceania' }];
+
 function OptionsFilter() {
-    const optionsMap = {
-        Africa: { value: 'Africa', label: 'Africa' },
-        America: { value: 'America', label: 'America' },
-        Asia: { value: 'Asia', label: 'Asia' },
-        Europe: { value: 'Europe', label: 'Europe' },
-        Oceania: { value: 'Oceania', label: 'Oceania' },
-    };
+    const [selectedOption, setSelectedOption] = useState(null);
 
     return (
-        <label>
-            Filter by region
-            <select name="Filter by Region">
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </label>
+        <div className={styles.OptionsFilter}>
+            <Select
+                className={styles.OptionsFilters__select}
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={options}
+                placeholder="Filter by region"
+            />
+
+        </div>
     );
 }
 

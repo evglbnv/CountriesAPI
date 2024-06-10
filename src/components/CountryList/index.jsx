@@ -8,6 +8,9 @@ function CountryList() {
         <li><Card /></li>
         <li><Card /></li>
         <li><Card /></li>
+        <li><Card /></li>
+        <li><Card /></li>
+        <li><Card /></li>
       </ul>
     </div>
   );

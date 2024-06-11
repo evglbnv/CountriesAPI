@@ -1,0 +1,17 @@
+.countrylist__wrapper {
+    margin: 48px 80px 0px 80px;
+    padding: 0;
+
+}
+
+.countrylist__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 75px;
+
+}
+
+.countrylist__list_item {
+    list-style: none;
+}

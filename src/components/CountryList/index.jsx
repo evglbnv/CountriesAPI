@@ -3,14 +3,14 @@ import Card from '../Card/index.jsx';
 
 function CountryList() {
   return (
-    <div className={styles.countryList__wrapper}>
-      <ul className={styles.countryList__list}>
-        <li><Card /></li>
-        <li><Card /></li>
-        <li><Card /></li>
-        <li><Card /></li>
-        <li><Card /></li>
-        <li><Card /></li>
+    <div className={styles.countrylist__wrapper}>
+      <ul className={styles.countrylist__list}>
+        <li className={styles.countrylist__list_item}><Card /></li>
+        <li className={styles.countrylist__list_item}><Card /></li>
+        <li className={styles.countrylist__list_item}><Card /></li>
+        <li className={styles.countrylist__list_item}><Card /></li>
+        <li className={styles.countrylist__list_item}><Card /></li>
+        <li className={styles.countrylist__list_item}><Card /></li>
       </ul>
     </div>
   );

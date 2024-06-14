@@ -4,6 +4,7 @@ import Header from './components/Header/index.jsx';
 import Details from './pages/Details/index.jsx';
 
 const App = () => (
+
     <>
         <Header />
         <Routes>

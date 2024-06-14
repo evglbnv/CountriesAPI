@@ -2,7 +2,7 @@ import styles from './styles.module.css';
 
 function Card() {
   return (
-    <li className={styles.card}>
+    <div className={styles.card}>
       <img className={styles.card__image} src="/src/assets/icons/Germany.svg" />
       <div className={styles.card__container}>
         <p className={styles.card__name}>Germany</p>
@@ -13,7 +13,7 @@ function Card() {
         </ul>
       </div>
 
-    </li>
+    </div>
   );
 }
 

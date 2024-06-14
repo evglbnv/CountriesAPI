@@ -41,9 +41,7 @@
 }
 
 .countrydetails__borderlist_item {
-    padding: 0 1rem;
-    background-color: var(--colors-ui-base);
-    box-shadow: var(--shadow);
-    line-height: 1.5;
+    border-radius: 2px;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }

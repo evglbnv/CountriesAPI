@@ -16,7 +16,16 @@ function CountryList() {
   return (
     <div className={styles.countrylist__wrapper}>
       <ul className={styles.countrylist__list}>
-        <li className={styles.countrylist__list_item}><Card /></li>
+        {countries.map((country) => (
+          <Card
+            key={country.name}
+            name={country.name.common}
+            flag={country.flags.png}
+            population={country.population}
+            region={country.region}
+            capital={country.capital}
+          />
+        ))}
       </ul>
     </div>
   );

@@ -1,19 +1,22 @@
 import styles from './styles.module.css';
 
-function Card() {
+function Card({
+  name, capital, population, region, flag,
+}) {
+  console.log(region);
+
   return (
-    <div className={styles.card}>
-      <img className={styles.card__image} src="/src/assets/icons/Germany.svg" />
+    <li className={styles.card}>
+      <img className={styles.card__image} src={flag} />
       <div className={styles.card__container}>
-        <p className={styles.card__name}>Germany</p>
+        <p className={styles.card__name}>{name}</p>
         <ul className={styles.card__list}>
-          <li className={styles.card__list_position}>Population: 81,770,900</li>
-          <li className={styles.card__list_position}>Region: Europe</li>
-          <li className={styles.card__list_position}>Capital: Berlin</li>
+          <li className={styles.card__list_position}>Population : {population}</li>
+          <li className={styles.card__list_position}>Region: {region}</li>
+          <li className={styles.card__list_position}>Capital: {capital}</li>
         </ul>
       </div>
-
-    </div>
+    </li>
   );
 }
 

@@ -45,3 +45,7 @@ const countriesSlice = createSlice({
 export const coutriesReducer = countriesSlice.reducer;
 
 export const selectAllCountries = (state) => state.countries.list;
+
+export const selectVisibleCountriesbyRegion = (state, { region = '' }) => state.countries.list.filter(
+  (country) => country.region.includes(region),
+);

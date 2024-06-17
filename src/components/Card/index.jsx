@@ -1,10 +1,9 @@
+/* eslint-disable react/prop-types */
 import styles from './styles.module.css';
 
 function Card({
   name, capital, population, region, flag,
 }) {
-  console.log(region);
-
   return (
     <li className={styles.card}>
       <img className={styles.card__image} src={flag} />

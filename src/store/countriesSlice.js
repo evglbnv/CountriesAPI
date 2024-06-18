@@ -1,5 +1,5 @@
-/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-param-reassign */
+/* eslint-disable max-len */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -46,6 +46,8 @@ export const coutriesReducer = countriesSlice.reducer;
 
 export const selectAllCountries = (state) => state.countries.list;
 
-export const selectVisibleCountriesbyRegion = (state, { region = '' }) => state.countries.list.filter(
-  (country) => country.region.includes(region),
+export const selectVisibleCountriesbyRegion = (state, { search = '', region = '' }) => state.countries.list.filter(
+  (country) => (
+    country.name.common.toLowerCase().includes(search.toLowerCase()) && country.region.includes(region)
+  ),
 );

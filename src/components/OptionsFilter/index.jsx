@@ -1,8 +1,8 @@
 /* eslint-disable indent */
 import Select from 'react-select';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './styles.module.css';
-import { selectRegion, setRegion } from '../../store/controlsSlice';
+import { setRegion } from '../../store/controlsSlice';
 
 const options = [{ value: 'Africa', label: 'Africa' },
 { value: 'America', label: 'America' },
@@ -12,8 +12,6 @@ const options = [{ value: 'Africa', label: 'Africa' },
 
 function OptionsFilter() {
     const dispatch = useDispatch();
-
-    // const region = useSelector(selectRegion);
 
     const handleSelect = (reg) => {
         dispatch(setRegion(reg?.value || ''));

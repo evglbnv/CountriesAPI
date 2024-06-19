@@ -5,15 +5,15 @@ function CountryDetails() {
     <div className={styles.countrydetails__wrapper}>
       <img className={styles.countrydetails__flag} src='/src/assets/icons/Belgium.svg'></img>
       <div className={styles.countrydetails__listgroup}>
-        <b>Belgium</b>
+        <b>name</b>
         <ul className={styles.countrydetails__list}>
-          <li className={styles.countrydetails__list_item}>Native Name: België</li>
-          <li className={styles.countrydetails__list_item}>Population: 11.319.511</li>
-          <li className={styles.countrydetails__list_item}>Region: Europe</li>
-          <li className={styles.countrydetails__list_item}>Capital: Western Europe</li>
-          <li className={styles.countrydetails__list_item}>Top Level Domain: Western Europe</li>
-          <li className={styles.countrydetails__list_item}>Currencies: Euro</li>
-          <li className={styles.countrydetails__list_item}>Languages: Dutch,French,German</li>
+          <li className={styles.countrydetails__list_item}><b>Native Name:</b>{ }</li>
+          <li className={styles.countrydetails__list_item}><b>Population:</b> { }</li>
+          <li className={styles.countrydetails__list_item}> <b>Region:</b>{ }</li>
+          <li className={styles.countrydetails__list_item}><b>Capital:</b> { }</li>
+          <li className={styles.countrydetails__list_item}><b>Top Level Domain:</b> { }</li>
+          <li className={styles.countrydetails__list_item}><b>Currencies:</b> { }</li>
+          <li className={styles.countrydetails__list_item}> <b>Languages:</b> { }</li>
         </ul>
         <div>
           <b className={styles.countrydetails__borderlist_header}>Border Countries</b>

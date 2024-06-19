@@ -2,10 +2,10 @@
 import styles from './styles.module.css';
 
 function Card({
-  name, capital, population, region, flag,
+  name, capital, population, region, flag, onClick,
 }) {
   return (
-    <li className={styles.card}>
+    <li className={styles.card} onClick={onClick}>
       <img className={styles.card__image} src={flag} />
       <div className={styles.card__container}>
         <p className={styles.card__name}>{name}</p>

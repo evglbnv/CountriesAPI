@@ -9,9 +9,10 @@ export const searchByCountry = (name) => `${BASE_URL}name/${name}`;
 
 export const fetchCountryDetailsData = createAsyncThunk(
   'details/fetchCountryData',
-  async () => {
+  async (name) => {
     // eslint-disable-next-line no-restricted-globals
     const response = await axios.get(searchByCountry(name));
+    console.log(response.data);
     return response.data;
   },
 );
@@ -47,3 +48,4 @@ export const detailsReducer = detailsSlice.reducer;
 
 // selectors
 export const selectCountry = (state) => state.detais.currentCountry;
+export const selectDetails = (state) => state.details;

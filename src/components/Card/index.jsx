@@ -10,7 +10,7 @@ function Card({
       <div className={styles.card__container}>
         <p className={styles.card__name}>{name}</p>
         <ul className={styles.card__list}>
-          <li className={styles.card__list_position}>Population : {population}</li>
+          <li className={styles.card__list_position}>Population : {population.toLocaleString()}</li>
           <li className={styles.card__list_position}>Region: {region}</li>
           <li className={styles.card__list_position}>Capital: {capital}</li>
         </ul>

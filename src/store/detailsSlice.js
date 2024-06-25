@@ -8,6 +8,8 @@ const BASE_URL = 'https://restcountries.com/v3.1/';
 
 export const searchByCountry = (name) => `${BASE_URL}name/${name}`;
 
+export const searchByCode = (borders) => `${BASE_URL}alpha?codes=${borders}`;
+
 export const fetchCountryDetailsData = createAsyncThunk(
   'details/fetchCountryData',
   async (name) => {
@@ -17,8 +19,18 @@ export const fetchCountryDetailsData = createAsyncThunk(
   },
 );
 
+export const fetchBorderDetails = createAsyncThunk(
+  'details/fetchBorderData',
+  async (borders) => {
+    const response = await axios.get(searchByCode(borders));
+
+    return response.data;
+  },
+);
+
 const initialState = {
   currentCountry: null,
+  neighbors: [],
   status: 'idle',
   error: null,
 };
@@ -26,7 +38,9 @@ const initialState = {
 const detailsSlice = createSlice({
   name: 'details',
   initialState,
-  reducers: {},
+  reducers: {
+    clearDetails: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCountryDetailsData.pending, (state) => {
@@ -40,12 +54,17 @@ const detailsSlice = createSlice({
       .addCase((fetchCountryDetailsData.fulfilled), (state, action) => {
         state.status = 'received';
         state.currentCountry = action.payload[0];
+      })
+      .addCase((fetchBorderDetails.fulfilled), (state, action) => {
+        state.neighbors = action.payload;
       });
   },
 });
 
 export const detailsReducer = detailsSlice.reducer;
+export const { clearDetails } = detailsSlice.actions;
 
 // selectors
-export const selectCountry = (state) => state.detais.currentCountry;
+export const selectCountry = (state) => state.details.currentCountry;
 export const selectDetails = (state) => state.details;
+export const selectNeighbors = (state) => state.details.neighbors;

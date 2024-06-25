@@ -56,7 +56,7 @@ const detailsSlice = createSlice({
         state.currentCountry = action.payload[0];
       })
       .addCase((fetchBorderDetails.fulfilled), (state, action) => {
-        state.neighbors = action.payload;
+        state.neighbors = action.payload.map((country) => country.name.common);
       });
   },
 });

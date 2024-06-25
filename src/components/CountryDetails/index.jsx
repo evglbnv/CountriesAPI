@@ -9,10 +9,11 @@ function CountryDetails(
   props,
 ) {
   const {
-    capital, name, population, tld, currencies, languages, subregion, flags, borders,
+    capital, name, population, tld, currencies, languages, subregion, flags, borders = [], navigate,
   } = props;
 
   const neighbors = useSelector(selectNeighbors);
+  console.log(neighbors);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -44,10 +45,10 @@ function CountryDetails(
         </ul>
         <div>
           <b className={styles.countrydetails__borderlist_header}>Border Countries</b>
-          <ul className={styles.countrydetails__borderlist}>
-            <li className={styles.countrydetails__borderlist_item}>France</li>
-            <li className={styles.countrydetails__borderlist_item}>Germany</li>
-            <li className={styles.countrydetails__borderlist_item}>Netherlands</li>
+          <ul className={styles.countrydetails__borderlist}>{neighbors.map((country) => (
+            <li className={styles.countrydetails__borderlist_item} key={country} onClick={() => navigate(`/country/${country}`)}>{country}</li>
+          ))}
+
           </ul>
         </div>
       </div>

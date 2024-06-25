@@ -20,7 +20,7 @@ function Details() {
       <button onClick={() => navigate(-1)}>
         <IoArrowBack /> Back
       </button>
-      {currentCountry && <CountryDetails name={name} {...currentCountry} />}
+      {currentCountry && <CountryDetails navigate={navigate} name={name} {...currentCountry} />}
     </>
   );
 }

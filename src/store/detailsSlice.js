@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
@@ -12,7 +13,6 @@ export const fetchCountryDetailsData = createAsyncThunk(
   async (name) => {
     // eslint-disable-next-line no-restricted-globals
     const response = await axios.get(searchByCountry(name));
-    console.log(response.data);
     return response.data;
   },
 );
@@ -39,7 +39,7 @@ const detailsSlice = createSlice({
       })
       .addCase((fetchCountryDetailsData.fulfilled), (state, action) => {
         state.status = 'received';
-        state.currentCountry = action.payload;
+        state.currentCountry = action.payload[0];
       });
   },
 });

@@ -8,10 +8,10 @@ import CountryDetails from '../../components/CountryDetails/index.jsx';
 function Details() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const details = useSelector(selectDetails);
+  const { currentCountry } = useSelector(selectDetails);
+  console.log(currentCountry);
 
   const { name } = useParams();
-  console.log(name);
 
   useEffect(() => { dispatch(fetchCountryDetailsData(name)); }, [name, dispatch]);
 
@@ -20,7 +20,7 @@ function Details() {
       <button onClick={() => navigate(-1)}>
         <IoArrowBack /> Back
       </button>
-      <CountryDetails name={name} />
+      {currentCountry && <CountryDetails name={name} {...currentCountry} />}
     </>
   );
 }

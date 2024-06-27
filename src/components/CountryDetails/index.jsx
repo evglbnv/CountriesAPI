@@ -13,7 +13,6 @@ function CountryDetails(
   } = props;
 
   const neighbors = useSelector(selectNeighbors);
-  console.log(neighbors);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,36 +22,37 @@ function CountryDetails(
   }, [borders, dispatch]);
 
   return (
-    <div className={styles.countrydetails__wrapper}>
-      <img className={styles.countrydetails__flag} src={flags.png}></img>
-      <div className={styles.countrydetails__listgroup}>
-        <b>{name.common}</b>
-        <ul className={styles.countrydetails__list}>
-          <li className={styles.countrydetails__list_item}><b>Native Name:</b>
-            {Object.values(name.nativeName).map((nn) => nn.official).slice(0, 1)}
-          </li>
-          <li className={styles.countrydetails__list_item}><b>Population:</b> {population.toLocaleString()}</li>
-          <li className={styles.countrydetails__list_item}> <b>Region: </b>{subregion}</li>
-          <li className={styles.countrydetails__list_item}><b>Capital:</b> {capital}</li>
-          <li className={styles.countrydetails__list_item}><b>Top Level Domain:</b>{tld}</li>
-          <li className={styles.countrydetails__list_item}><b>Currencies:</b>
-            {`${Object.values(currencies).map((currency) => currency.name)} 
+    <section className={styles.countrydetails__section}>
+      <img className={styles.countrydetails__flag} src={flags.svg}></img>
+      <div>
+        <div className={styles.countrydetails__name}>{name.common}</div>
+        <div className={styles.countrydetails__listgroup}>
+          <ul className={styles.countrydetails__list}>
+            <li className={styles.countrydetails__list_item}><span>Native Name:</span>
+              {Object.values(name.nativeName).map((nn) => nn.official).slice(0, 1)}
+            </li>
+            <li className={styles.countrydetails__list_item}><span>Population:</span> {population.toLocaleString()}</li>
+            <li className={styles.countrydetails__list_item}> <span>Region: </span>{subregion}</li>
+            <li className={styles.countrydetails__list_item}><span>Capital:</span> {capital}</li>
+            <li className={styles.countrydetails__list_item}><span>Top Level Domain:</span>{tld}</li>
+            <li className={styles.countrydetails__list_item}><span>Currencies:</span>
+              {`${Object.values(currencies).map((currency) => currency.name)} 
            ${Object.values(currencies).map((currency) => currency.symbol)} `}
-          </li>
-          <li className={styles.countrydetails__list_item}> <b>Languages:</b>
-            {Object.values(languages).map((language) => language).join(' ')}
-          </li>
-        </ul>
+            </li>
+            <li className={styles.countrydetails__list_item}> <b>Languages:</b>
+              {Object.values(languages).map((language) => language).join(' ')}
+            </li>
+          </ul>
+        </div>
         <div>
-          <b className={styles.countrydetails__borderlist_header}>Border Countries</b>
+          <b className={styles.countrydetails__name}>Border Countries</b>
           <ul className={styles.countrydetails__borderlist}>{neighbors.map((country) => (
             <li className={styles.countrydetails__borderlist_item} key={country} onClick={() => navigate(`/country/${country}`)}>{country}</li>
           ))}
-
           </ul>
         </div>
       </div>
-    </div >
+    </section >
   );
 }
 

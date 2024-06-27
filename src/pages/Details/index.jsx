@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCountryDetailsData, selectDetails } from '../../store/detailsSlice';
 import CountryDetails from '../../components/CountryDetails/index.jsx';
+import styles from './styles.module.css';
 
 function Details() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function Details() {
 
   return (
     <>
-      <button onClick={() => navigate(-1)}>
+      <button className={styles.button} onClick={() => navigate(-1)}>
         <IoArrowBack /> Back
       </button>
       {currentCountry && <CountryDetails navigate={navigate} name={name} {...currentCountry} />}

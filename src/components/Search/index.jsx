@@ -15,7 +15,7 @@ function Search() {
     };
 
     return (
-        <div className={styles.search__wrapper}>
+        <section className={styles.search__section}>
             <form className={styles.search}>
                 <IoIosSearch className={styles.search__icon} />
                 <input
@@ -27,7 +27,7 @@ function Search() {
                 />
             </form>
             <OptionsFilter />
-        </div>
+        </section>
     );
 }
 

@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { IoArrowBack } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchCountryDetailsData, selectCountry, selectDetails } from '../../store/detailsSlice';
+import { fetchCountryDetailsData, selectDetails } from '../../store/detailsSlice';
 import CountryDetails from '../../components/CountryDetails/index.jsx';
 
 function Details() {

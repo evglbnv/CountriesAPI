@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable react/prop-types */
 import styles from './styles.module.css';
 
@@ -10,9 +11,9 @@ function Card({
       <div className={styles.card__container}>
         <p className={styles.card__name}>{name}</p>
         <ul className={styles.card__list}>
-          <li className={styles.card__list_position}>Population : {population.toLocaleString()}</li>
-          <li className={styles.card__list_position}>Region: {region}</li>
-          <li className={styles.card__list_position}>Capital: {capital}</li>
+          <li className={styles.card__list_position}><b>Population :</b> {population.toLocaleString()}</li>
+          <li className={styles.card__list_position}><b>Region:</b> {region}</li>
+          <li className={styles.card__list_position}><b>Capital:</b> {capital}</li>
         </ul>
       </div>
     </li>

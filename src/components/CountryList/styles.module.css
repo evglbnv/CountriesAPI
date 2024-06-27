@@ -1,15 +1,12 @@
-.countrylist__wrapper {
-    margin: 48px 80px 0px 80px;
-    padding: 0;
-
+.countrylist__section {
+    width: 100%;
 }
 
 .countrylist__list {
+    padding: 0 2rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 75px;
-
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
 }
 
 .countrylist__list_item {

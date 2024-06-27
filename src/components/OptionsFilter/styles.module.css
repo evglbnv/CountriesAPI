@@ -1,8 +1,11 @@
-.OptionsFilter {}
+.OptionsFilter {
+    border: none;
+    padding: 0rem 2rem;
+}
 
 .OptionsFilters__select {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     width: 200px;
+    color: var(--colors-text);
+    background-color: var(--colors-bg);
+    border-radius: 0.5rem;
 }

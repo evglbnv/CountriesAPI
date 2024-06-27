@@ -27,11 +27,8 @@
 .search__input {
     margin: 0;
     width: 480px;
-    height: 56px;
     padding: 18px 0px 18px 74px;
     border: none;
-    font-size: 14px;
-    line-height: 20px;
     background-color: var(--colors-ui-base);
     border-radius: 0.5rem;
 }

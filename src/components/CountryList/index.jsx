@@ -21,7 +21,7 @@ function CountryList() {
   }, [dispatch]);
 
   return (
-    <div className={styles.countrylist__wrapper}>
+    <section className={styles.countrylist__section}>
       <ul className={styles.countrylist__list}>
         {visibleCountries.map((country) => (
           <Card
@@ -37,7 +37,7 @@ function CountryList() {
           />
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 

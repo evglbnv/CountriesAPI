@@ -9,9 +9,7 @@ import styles from './styles.module.css';
 function Details() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { currentCountry } = useSelector(selectDetails);
-  console.log(currentCountry);
-
+  const { currentCountry, error, status } = useSelector(selectDetails);
   const { name } = useParams();
 
   useEffect(() => { dispatch(fetchCountryDetailsData(name)); }, [name, dispatch]);
@@ -21,6 +19,8 @@ function Details() {
       <button className={styles.button} onClick={() => navigate(-1)}>
         <IoArrowBack /> Back
       </button>
+      {status === 'loading' && <h2>Loading...</h2>}
+      {error && <h2>{error}</h2>}
       {currentCountry && <CountryDetails navigate={navigate} name={name} {...currentCountry} />}
     </>
   );

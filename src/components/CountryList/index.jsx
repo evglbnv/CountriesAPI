@@ -1,9 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable max-len */
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   fetchCountriesData, selectVisibleCountriesbyRegion,
+  selectCountriesInfo,
 } from '../../store/countriesSlice';
 
 import styles from './styles.module.css';
@@ -16,13 +18,17 @@ function CountryList() {
   const controls = useSelector(selectControls);
   const visibleCountries = useSelector((state) => selectVisibleCountriesbyRegion(state, controls));
 
+  const { error, status } = useSelector(selectCountriesInfo);
+
   useEffect(() => {
     dispatch(fetchCountriesData());
   }, [dispatch]);
 
   return (
     <section className={styles.countrylist__section}>
-      <ul className={styles.countrylist__list}>
+      {error && <h2>Can't fetch data</h2>}
+      {status === 'loading' && <h2>Loading...</h2>}
+      {status === 'received' && (<ul className={styles.countrylist__list}>
         {visibleCountries.map((country) => (
           <Card
             key={country.name.common}
@@ -36,7 +42,7 @@ function CountryList() {
             }}
           />
         ))}
-      </ul>
+      </ul>)}
     </section>
   );
 }

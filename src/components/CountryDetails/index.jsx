@@ -45,11 +45,14 @@ function CountryDetails(
           </ul>
         </div>
         <div>
-          <b className={styles.countrydetails__name}>Border Countries</b>
-          <ul className={styles.countrydetails__borderlist}>{neighbors.map((country) => (
-            <li className={styles.countrydetails__borderlist_item} key={country} onClick={() => navigate(`/country/${country}`)}>{country}</li>
-          ))}
-          </ul>
+          <b className={styles.countrydetails__name}>Border Countries</b> {!borders.length ? (<span>There is no borders here</span>)
+            : (
+              <ul className={styles.countrydetails__borderlist}>{neighbors.map((country) => (
+                <li className={styles.countrydetails__borderlist_item} key={country}
+                  onClick={() => navigate(`/country/${country}`)}>{country}
+                </li>
+              ))}
+              </ul>)}
         </div>
       </div>
     </section >

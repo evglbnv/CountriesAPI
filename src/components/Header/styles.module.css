@@ -16,7 +16,7 @@
 .header__link {
     text-decoration: none;
     color: rgb(17, 21, 23);
-    font-size: 24px;
+    font-size: var(--fs-sm);
     font-weight: var(--fw-bold);
     color: var(--colors-text);
 }
